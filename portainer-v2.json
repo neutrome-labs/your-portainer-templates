@@ -1,0 +1,36 @@
+{
+	"version": "2",
+	"templates": [
+		{
+            "type": 3,
+            "name": "firefly-3",
+            "title": "Firefly 3",
+			"description": "Firefly 3",
+			"categories": [
+				"Other"
+			],
+            "platform": "linux",
+			"repository": {
+                "url": "https://github.com/neutrome-labs/your-portainer-templates",
+                "stackfile": "firefly-3/docker-compose.yml"
+            },
+			"env": [
+				{
+                    "name": "APP_ENV",
+                    "label": "APP_ENV",
+                    "default": "production",
+                    "select": "production"
+                },
+                {
+                    "name": "SITE_OWNER",
+                    "label": "SITE_OWNER",
+                    "default": "admin@example.com"
+                },
+                {
+                    "name": "APP_KEY",
+                    "label": "APP_KEY"
+                }
+			]
+		}
+    ]
+}
