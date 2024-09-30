@@ -18,8 +18,7 @@
 				{
                     "name": "APP_ENV",
                     "label": "APP_ENV",
-                    "default": "production",
-                    "select": "production"
+                    "default": "production"
                 },
                 {
                     "name": "SITE_OWNER",
