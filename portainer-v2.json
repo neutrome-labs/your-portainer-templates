@@ -474,6 +474,11 @@
           "name": "APP_URL",
           "label": "APP_URL",
           "default": "http://localhost"
+        },
+        {
+          "name": "TRAEFIK_ENABLE",
+          "label": "Label: traefik.enable",
+          "default": "true"
         }
       ],
       "platform": "linux",

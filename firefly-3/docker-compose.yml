@@ -101,6 +101,8 @@ services:
       USE_RUNNING_BALANCE: ${USE_RUNNING_BALANCE}
       FIREFLY_III_LAYOUT: ${FIREFLY_III_LAYOUT}
       APP_URL: ${APP_URL}
+    labels:
+      - traefik.enable=${TRAEFIK_ENABLE}
     depends_on:
       - db
 
