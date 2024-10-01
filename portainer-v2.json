@@ -479,6 +479,25 @@
           "name": "TRAEFIK_ENABLE",
           "label": "TRAEFIK_ENABLE",
           "default": "true"
+        },
+        {
+          "name": "TRAEFIK_ROUTER_NAME",
+          "label": "TRAEFIK_ROUTER_NAME"
+        },
+        {
+          "name": "TRAEFIK_TLS",
+          "label": "TRAEFIK_TLS",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_ROUTER_RULE",
+          "label": "TRAEFIK_ROUTER_RULE",
+          "default": "HostRegexp(`.*`)"
+        },
+        {
+          "name": "TRAEFIK_LB_PORT",
+          "label": "TRAEFIK_LB_PORT",
+          "default": "8080"
         }
       ],
       "platform": "linux",
