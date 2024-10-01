@@ -477,7 +477,7 @@
         },
         {
           "name": "TRAEFIK_ENABLE",
-          "label": "Label: traefik.enable",
+          "label": "TRAEFIK_ENABLE",
           "default": "true"
         }
       ],
