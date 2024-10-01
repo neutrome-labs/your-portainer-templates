@@ -11,6 +11,26 @@
       },
       "env": [
         {
+          "name": "MYSQL_RANDOM_ROOT_PASSWORD",
+          "label": "MYSQL_RANDOM_ROOT_PASSWORD",
+          "default": "yes"
+        },
+        {
+          "name": "MYSQL_USER",
+          "label": "MYSQL_USER",
+          "default": "firefly"
+        },
+        {
+          "name": "MYSQL_PASSWORD",
+          "label": "MYSQL_PASSWORD",
+          "default": "secret_firefly_password"
+        },
+        {
+          "name": "MYSQL_DATABASE",
+          "label": "MYSQL_DATABASE",
+          "default": "firefly"
+        },
+        {
           "name": "APP_ENV",
           "label": "APP_ENV",
           "default": "production"
