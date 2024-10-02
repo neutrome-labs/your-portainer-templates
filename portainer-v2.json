@@ -473,12 +473,7 @@
         {
           "name": "APP_URL",
           "label": "APP_URL",
-          "default": "http://localhost"
-        },
-        {
-          "name": "INGRESS_NETWORK",
-          "label": "INGRESS_NETWORK",
-          "default": "ingress_default"
+          "default": "https://firefly3.example.com"
         },
         {
           "name": "TRAEFIK_ENABLE",
@@ -488,11 +483,6 @@
         {
           "name": "TRAEFIK_ROUTER_NAME",
           "label": "TRAEFIK_ROUTER_NAME"
-        },
-        {
-          "name": "TRAEFIK_LB_PORT",
-          "label": "TRAEFIK_LB_PORT",
-          "default": "8080"
         },
         {
           "name": "TRAEFIK_TLS",
