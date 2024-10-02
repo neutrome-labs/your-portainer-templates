@@ -103,9 +103,12 @@ services:
       APP_URL: ${APP_URL}
     labels:
       - traefik.enable=${TRAEFIK_ENABLE}
-      - traefik.http.routers.${TRAEFIK_ROUTER_NAME}.tls=${TRAEFIK_TLS}
-      - traefik.http.routers.${TRAEFIK_ROUTER_NAME}.rule=${TRAEFIK_ROUTER_RULE}
       - traefik.http.services.${TRAEFIK_ROUTER_NAME}.loadbalancer.server.port=${TRAEFIK_LB_PORT}
+      - traefik.http.routers.${TRAEFIK_ROUTER_NAME}.tls=${TRAEFIK_TLS}
+      - traefik.http.routers.${TRAEFIK_ROUTER_NAME}.tls.certresolver=${TRAEFIK_CERT_RESOLVER}
+      - traefik.http.routers.${TRAEFIK_ROUTER_NAME}.rule=${TRAEFIK_ROUTER_RULE}
+    networks:
+      - ${INGRESS_NETWORK}
     depends_on:
       - db
 
@@ -122,3 +125,7 @@ services:
 volumes:
   upload:
   db:
+
+networks:
+  ${INGRESS_NETWORK}:
+    external: true

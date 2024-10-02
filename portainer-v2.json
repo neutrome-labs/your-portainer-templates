@@ -476,6 +476,11 @@
           "default": "http://localhost"
         },
         {
+          "name": "INGRESS_NETWORK",
+          "label": "INGRESS_NETWORK",
+          "default": "ingress_default"
+        },
+        {
           "name": "TRAEFIK_ENABLE",
           "label": "TRAEFIK_ENABLE",
           "default": "true"
@@ -485,19 +490,24 @@
           "label": "TRAEFIK_ROUTER_NAME"
         },
         {
+          "name": "TRAEFIK_LB_PORT",
+          "label": "TRAEFIK_LB_PORT",
+          "default": "8080"
+        },
+        {
           "name": "TRAEFIK_TLS",
           "label": "TRAEFIK_TLS",
           "default": "true"
         },
         {
-          "name": "TRAEFIK_ROUTER_RULE",
-          "label": "TRAEFIK_ROUTER_RULE",
-          "default": "HostRegexp(`.*`)"
+          "name": "TRAEFIK_CERT_RESOLVER",
+          "label": "TRAEFIK_CERT_RESOLVER",
+          "default": "default"
         },
         {
-          "name": "TRAEFIK_LB_PORT",
-          "label": "TRAEFIK_LB_PORT",
-          "default": "8080"
+          "name": "TRAEFIK_ROUTER_RULE",
+          "label": "TRAEFIK_ROUTER_RULE",
+          "default": "Host(`firefly3.example.com`)"
         }
       ],
       "platform": "linux",
