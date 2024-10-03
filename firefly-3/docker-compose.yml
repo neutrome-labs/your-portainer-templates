@@ -110,6 +110,9 @@ services:
       - traefik.http.routers.${TRAEFIK_ROUTER_NAME}.tls=${TRAEFIK_TLS}
       - traefik.http.routers.${TRAEFIK_ROUTER_NAME}.tls.certresolver=${TRAEFIK_CERT_RESOLVER}
       - traefik.http.routers.${TRAEFIK_ROUTER_NAME}.rule=${TRAEFIK_ROUTER_RULE}
+    networks:
+      - default
+      - ingress_default
     depends_on:
       - db
 
@@ -129,3 +132,8 @@ services:
 volumes:
   upload:
   db:
+
+networks:
+  default:
+  ingress_default:
+    external: true
