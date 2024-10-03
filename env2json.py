@@ -28,7 +28,7 @@ for arg in sys.argv[2 if noprefix else 1:]:
                 continue
            
             data, comment = line.split('#', 1) if '#' in line else (line, '')
-            key, value = line.split('=', 1) if '=' in line else (line, None)
+            key, value = data.split('=', 1) if '=' in line else (line, None)
             if value is None or value == '' or value == 'null':
                 value = None
             
