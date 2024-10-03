@@ -1,0 +1,503 @@
+[
+  {
+    "name": "REPLICAS_COUNT_APP",
+    "label": "REPLICAS_COUNT_APP",
+    "default": "1 # !important"
+  },
+  {
+    "name": "REPLICAS_COUNT_DB",
+    "label": "REPLICAS_COUNT_DB",
+    "default": "1 # !important"
+  },
+  {
+    "name": "MYSQL_PASSWORD",
+    "label": "MYSQL_PASSWORD",
+    "default": "secret_firefly_password # !important"
+  },
+  {
+    "name": "SITE_OWNER",
+    "label": "SITE_OWNER",
+    "default": "mail@example.com # !important"
+  },
+  {
+    "name": "APP_KEY",
+    "label": "APP_KEY",
+    "default": "SomeRandomStringOf32CharsExactly # !important"
+  },
+  {
+    "name": "TRUSTED_PROXIES",
+    "label": "TRUSTED_PROXIES",
+    "default": "** # !important"
+  },
+  {
+    "name": "DB_PASSWORD",
+    "label": "DB_PASSWORD",
+    "default": "secret_firefly_password # !important"
+  },
+  {
+    "name": "APP_URL",
+    "label": "APP_URL",
+    "default": "http://localhost # !important"
+  },
+  {
+    "name": "TRAEFIK_ENABLE",
+    "label": "TRAEFIK_ENABLE",
+    "default": "true # !important"
+  },
+  {
+    "name": "TRAEFIK_ROUTER_NAME",
+    "label": "TRAEFIK_ROUTER_NAME",
+    "default": "# !important"
+  },
+  {
+    "name": "TRAEFIK_TLS",
+    "label": "TRAEFIK_TLS",
+    "default": "true # !important"
+  },
+  {
+    "name": "TRAEFIK_CERT_RESOLVER",
+    "label": "TRAEFIK_CERT_RESOLVER",
+    "default": "default # !important"
+  },
+  {
+    "name": "TRAEFIK_ROUTER_RULE",
+    "label": "TRAEFIK_ROUTER_RULE",
+    "default": "Host(`firefly3.example.com`) # !important"
+  },
+  {
+    "name": "MYSQL_RANDOM_ROOT_PASSWORD",
+    "label": "MYSQL_RANDOM_ROOT_PASSWORD",
+    "default": "yes"
+  },
+  {
+    "name": "MYSQL_USER",
+    "label": "MYSQL_USER",
+    "default": "firefly"
+  },
+  {
+    "name": "MYSQL_DATABASE",
+    "label": "MYSQL_DATABASE",
+    "default": "firefly"
+  },
+  {
+    "name": "APP_ENV",
+    "label": "APP_ENV",
+    "default": "production"
+  },
+  {
+    "name": "APP_DEBUG",
+    "label": "APP_DEBUG",
+    "default": "false"
+  },
+  {
+    "name": "DEFAULT_LANGUAGE",
+    "label": "DEFAULT_LANGUAGE",
+    "default": "en_US"
+  },
+  {
+    "name": "DEFAULT_LOCALE",
+    "label": "DEFAULT_LOCALE",
+    "default": "equal"
+  },
+  {
+    "name": "TZ",
+    "label": "TZ",
+    "default": "Europe/Amsterdam"
+  },
+  {
+    "name": "LOG_CHANNEL",
+    "label": "LOG_CHANNEL",
+    "default": "stack"
+  },
+  {
+    "name": "APP_LOG_LEVEL",
+    "label": "APP_LOG_LEVEL",
+    "default": "notice"
+  },
+  {
+    "name": "AUDIT_LOG_LEVEL",
+    "label": "AUDIT_LOG_LEVEL",
+    "default": "emergency"
+  },
+  {
+    "name": "AUDIT_LOG_CHANNEL",
+    "label": "AUDIT_LOG_CHANNEL"
+  },
+  {
+    "name": "PAPERTRAIL_HOST",
+    "label": "PAPERTRAIL_HOST"
+  },
+  {
+    "name": "PAPERTRAIL_PORT",
+    "label": "PAPERTRAIL_PORT"
+  },
+  {
+    "name": "DB_CONNECTION",
+    "label": "DB_CONNECTION",
+    "default": "mysql"
+  },
+  {
+    "name": "DB_HOST",
+    "label": "DB_HOST",
+    "default": "db"
+  },
+  {
+    "name": "DB_PORT",
+    "label": "DB_PORT",
+    "default": "3306"
+  },
+  {
+    "name": "DB_DATABASE",
+    "label": "DB_DATABASE",
+    "default": "firefly"
+  },
+  {
+    "name": "DB_USERNAME",
+    "label": "DB_USERNAME",
+    "default": "firefly"
+  },
+  {
+    "name": "DB_SOCKET",
+    "label": "DB_SOCKET"
+  },
+  {
+    "name": "MYSQL_USE_SSL",
+    "label": "MYSQL_USE_SSL",
+    "default": "false"
+  },
+  {
+    "name": "MYSQL_SSL_VERIFY_SERVER_CERT",
+    "label": "MYSQL_SSL_VERIFY_SERVER_CERT",
+    "default": "true"
+  },
+  {
+    "name": "MYSQL_SSL_CAPATH",
+    "label": "MYSQL_SSL_CAPATH",
+    "default": "/etc/ssl/certs/"
+  },
+  {
+    "name": "MYSQL_SSL_CA",
+    "label": "MYSQL_SSL_CA"
+  },
+  {
+    "name": "MYSQL_SSL_CERT",
+    "label": "MYSQL_SSL_CERT"
+  },
+  {
+    "name": "MYSQL_SSL_KEY",
+    "label": "MYSQL_SSL_KEY"
+  },
+  {
+    "name": "MYSQL_SSL_CIPHER",
+    "label": "MYSQL_SSL_CIPHER"
+  },
+  {
+    "name": "PGSQL_SSL_MODE",
+    "label": "PGSQL_SSL_MODE",
+    "default": "prefer"
+  },
+  {
+    "name": "PGSQL_SSL_ROOT_CERT",
+    "label": "PGSQL_SSL_ROOT_CERT"
+  },
+  {
+    "name": "PGSQL_SSL_CERT",
+    "label": "PGSQL_SSL_CERT"
+  },
+  {
+    "name": "PGSQL_SSL_KEY",
+    "label": "PGSQL_SSL_KEY"
+  },
+  {
+    "name": "PGSQL_SSL_CRL_FILE",
+    "label": "PGSQL_SSL_CRL_FILE"
+  },
+  {
+    "name": "PGSQL_SCHEMA",
+    "label": "PGSQL_SCHEMA",
+    "default": "public"
+  },
+  {
+    "name": "CACHE_DRIVER",
+    "label": "CACHE_DRIVER",
+    "default": "file"
+  },
+  {
+    "name": "SESSION_DRIVER",
+    "label": "SESSION_DRIVER",
+    "default": "file"
+  },
+  {
+    "name": "REDIS_SCHEME",
+    "label": "REDIS_SCHEME",
+    "default": "tcp"
+  },
+  {
+    "name": "REDIS_PATH",
+    "label": "REDIS_PATH"
+  },
+  {
+    "name": "REDIS_HOST",
+    "label": "REDIS_HOST",
+    "default": "127.0.0.1"
+  },
+  {
+    "name": "REDIS_PORT",
+    "label": "REDIS_PORT",
+    "default": "6379"
+  },
+  {
+    "name": "REDIS_USERNAME",
+    "label": "REDIS_USERNAME"
+  },
+  {
+    "name": "REDIS_PASSWORD",
+    "label": "REDIS_PASSWORD"
+  },
+  {
+    "name": "REDIS_DB",
+    "label": "REDIS_DB",
+    "default": "\"0\""
+  },
+  {
+    "name": "REDIS_CACHE_DB",
+    "label": "REDIS_CACHE_DB",
+    "default": "\"1\""
+  },
+  {
+    "name": "COOKIE_PATH",
+    "label": "COOKIE_PATH",
+    "default": "\"/\""
+  },
+  {
+    "name": "COOKIE_DOMAIN",
+    "label": "COOKIE_DOMAIN"
+  },
+  {
+    "name": "COOKIE_SECURE",
+    "label": "COOKIE_SECURE",
+    "default": "false"
+  },
+  {
+    "name": "COOKIE_SAMESITE",
+    "label": "COOKIE_SAMESITE",
+    "default": "lax"
+  },
+  {
+    "name": "MAIL_MAILER",
+    "label": "MAIL_MAILER",
+    "default": "log"
+  },
+  {
+    "name": "MAIL_HOST",
+    "label": "MAIL_HOST"
+  },
+  {
+    "name": "MAIL_PORT",
+    "label": "MAIL_PORT",
+    "default": "2525"
+  },
+  {
+    "name": "MAIL_FROM",
+    "label": "MAIL_FROM",
+    "default": "changeme@example.com"
+  },
+  {
+    "name": "MAIL_USERNAME",
+    "label": "MAIL_USERNAME"
+  },
+  {
+    "name": "MAIL_PASSWORD",
+    "label": "MAIL_PASSWORD"
+  },
+  {
+    "name": "MAIL_ENCRYPTION",
+    "label": "MAIL_ENCRYPTION"
+  },
+  {
+    "name": "MAIL_SENDMAIL_COMMAND",
+    "label": "MAIL_SENDMAIL_COMMAND"
+  },
+  {
+    "name": "MAILGUN_DOMAIN",
+    "label": "MAILGUN_DOMAIN"
+  },
+  {
+    "name": "MAILGUN_SECRET",
+    "label": "MAILGUN_SECRET"
+  },
+  {
+    "name": "MAILGUN_ENDPOINT",
+    "label": "MAILGUN_ENDPOINT",
+    "default": "api.mailgun.net"
+  },
+  {
+    "name": "MANDRILL_SECRET",
+    "label": "MANDRILL_SECRET"
+  },
+  {
+    "name": "SPARKPOST_SECRET",
+    "label": "SPARKPOST_SECRET"
+  },
+  {
+    "name": "SEND_ERROR_MESSAGE",
+    "label": "SEND_ERROR_MESSAGE",
+    "default": "true"
+  },
+  {
+    "name": "SEND_REPORT_JOURNALS",
+    "label": "SEND_REPORT_JOURNALS",
+    "default": "true"
+  },
+  {
+    "name": "ENABLE_EXTERNAL_MAP",
+    "label": "ENABLE_EXTERNAL_MAP",
+    "default": "false"
+  },
+  {
+    "name": "ENABLE_EXCHANGE_RATES",
+    "label": "ENABLE_EXCHANGE_RATES",
+    "default": "false"
+  },
+  {
+    "name": "ENABLE_EXTERNAL_RATES",
+    "label": "ENABLE_EXTERNAL_RATES",
+    "default": "false"
+  },
+  {
+    "name": "MAP_DEFAULT_LAT",
+    "label": "MAP_DEFAULT_LAT",
+    "default": "51.983333"
+  },
+  {
+    "name": "MAP_DEFAULT_LONG",
+    "label": "MAP_DEFAULT_LONG",
+    "default": "5.916667"
+  },
+  {
+    "name": "MAP_DEFAULT_ZOOM",
+    "label": "MAP_DEFAULT_ZOOM",
+    "default": "6"
+  },
+  {
+    "name": "VALID_URL_PROTOCOLS",
+    "label": "VALID_URL_PROTOCOLS"
+  },
+  {
+    "name": "AUTHENTICATION_GUARD",
+    "label": "AUTHENTICATION_GUARD",
+    "default": "web"
+  },
+  {
+    "name": "AUTHENTICATION_GUARD_HEADER",
+    "label": "AUTHENTICATION_GUARD_HEADER",
+    "default": "REMOTE_USER"
+  },
+  {
+    "name": "AUTHENTICATION_GUARD_EMAIL",
+    "label": "AUTHENTICATION_GUARD_EMAIL"
+  },
+  {
+    "name": "PASSPORT_PRIVATE_KEY",
+    "label": "PASSPORT_PRIVATE_KEY"
+  },
+  {
+    "name": "PASSPORT_PUBLIC_KEY",
+    "label": "PASSPORT_PUBLIC_KEY"
+  },
+  {
+    "name": "CUSTOM_LOGOUT_URL",
+    "label": "CUSTOM_LOGOUT_URL"
+  },
+  {
+    "name": "DISABLE_FRAME_HEADER",
+    "label": "DISABLE_FRAME_HEADER",
+    "default": "false"
+  },
+  {
+    "name": "DISABLE_CSP_HEADER",
+    "label": "DISABLE_CSP_HEADER",
+    "default": "false"
+  },
+  {
+    "name": "TRACKER_SITE_ID",
+    "label": "TRACKER_SITE_ID"
+  },
+  {
+    "name": "TRACKER_URL",
+    "label": "TRACKER_URL"
+  },
+  {
+    "name": "ALLOW_WEBHOOKS",
+    "label": "ALLOW_WEBHOOKS",
+    "default": "false"
+  },
+  {
+    "name": "STATIC_CRON_TOKEN",
+    "label": "STATIC_CRON_TOKEN"
+  },
+  {
+    "name": "DKR_BUILD_LOCALE",
+    "label": "DKR_BUILD_LOCALE",
+    "default": "false"
+  },
+  {
+    "name": "DKR_CHECK_SQLITE",
+    "label": "DKR_CHECK_SQLITE",
+    "default": "true"
+  },
+  {
+    "name": "APP_NAME",
+    "label": "APP_NAME",
+    "default": "FireflyIII"
+  },
+  {
+    "name": "BROADCAST_DRIVER",
+    "label": "BROADCAST_DRIVER",
+    "default": "log"
+  },
+  {
+    "name": "QUEUE_DRIVER",
+    "label": "QUEUE_DRIVER",
+    "default": "sync"
+  },
+  {
+    "name": "CACHE_PREFIX",
+    "label": "CACHE_PREFIX",
+    "default": "firefly"
+  },
+  {
+    "name": "PUSHER_KEY",
+    "label": "PUSHER_KEY"
+  },
+  {
+    "name": "IPINFO_TOKEN",
+    "label": "IPINFO_TOKEN"
+  },
+  {
+    "name": "PUSHER_SECRET",
+    "label": "PUSHER_SECRET"
+  },
+  {
+    "name": "PUSHER_ID",
+    "label": "PUSHER_ID"
+  },
+  {
+    "name": "DEMO_USERNAME",
+    "label": "DEMO_USERNAME"
+  },
+  {
+    "name": "DEMO_PASSWORD",
+    "label": "DEMO_PASSWORD"
+  },
+  {
+    "name": "USE_RUNNING_BALANCE",
+    "label": "USE_RUNNING_BALANCE",
+    "default": "false"
+  },
+  {
+    "name": "FIREFLY_III_LAYOUT",
+    "label": "FIREFLY_III_LAYOUT",
+    "default": "v1"
+  }
+]

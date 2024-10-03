@@ -11,6 +11,71 @@
       },
       "env": [
         {
+          "name": "REPLICAS_COUNT_APP",
+          "label": "REPLICAS_COUNT_APP",
+          "default": "1 # !important"
+        },
+        {
+          "name": "REPLICAS_COUNT_DB",
+          "label": "REPLICAS_COUNT_DB",
+          "default": "1 # !important"
+        },
+        {
+          "name": "MYSQL_PASSWORD",
+          "label": "MYSQL_PASSWORD",
+          "default": "secret_firefly_password # !important"
+        },
+        {
+          "name": "SITE_OWNER",
+          "label": "SITE_OWNER",
+          "default": "mail@example.com # !important"
+        },
+        {
+          "name": "APP_KEY",
+          "label": "APP_KEY",
+          "default": "SomeRandomStringOf32CharsExactly # !important"
+        },
+        {
+          "name": "TRUSTED_PROXIES",
+          "label": "TRUSTED_PROXIES",
+          "default": "** # !important"
+        },
+        {
+          "name": "DB_PASSWORD",
+          "label": "DB_PASSWORD",
+          "default": "secret_firefly_password # !important"
+        },
+        {
+          "name": "APP_URL",
+          "label": "APP_URL",
+          "default": "http://localhost # !important"
+        },
+        {
+          "name": "TRAEFIK_ENABLE",
+          "label": "TRAEFIK_ENABLE",
+          "default": "true # !important"
+        },
+        {
+          "name": "TRAEFIK_ROUTER_NAME",
+          "label": "TRAEFIK_ROUTER_NAME",
+          "default": "# !important"
+        },
+        {
+          "name": "TRAEFIK_TLS",
+          "label": "TRAEFIK_TLS",
+          "default": "true # !important"
+        },
+        {
+          "name": "TRAEFIK_CERT_RESOLVER",
+          "label": "TRAEFIK_CERT_RESOLVER",
+          "default": "default # !important"
+        },
+        {
+          "name": "TRAEFIK_ROUTER_RULE",
+          "label": "TRAEFIK_ROUTER_RULE",
+          "default": "Host(`firefly3.example.com`) # !important"
+        },
+        {
           "name": "MYSQL_RANDOM_ROOT_PASSWORD",
           "label": "MYSQL_RANDOM_ROOT_PASSWORD",
           "default": "yes"
@@ -19,11 +84,6 @@
           "name": "MYSQL_USER",
           "label": "MYSQL_USER",
           "default": "firefly"
-        },
-        {
-          "name": "MYSQL_PASSWORD",
-          "label": "MYSQL_PASSWORD",
-          "default": "secret_firefly_password"
         },
         {
           "name": "MYSQL_DATABASE",
@@ -41,16 +101,6 @@
           "default": "false"
         },
         {
-          "name": "SITE_OWNER",
-          "label": "SITE_OWNER",
-          "default": "mail@example.com"
-        },
-        {
-          "name": "APP_KEY",
-          "label": "APP_KEY",
-          "default": "SomeRandomStringOf32CharsExactly"
-        },
-        {
           "name": "DEFAULT_LANGUAGE",
           "label": "DEFAULT_LANGUAGE",
           "default": "en_US"
@@ -64,10 +114,6 @@
           "name": "TZ",
           "label": "TZ",
           "default": "Europe/Amsterdam"
-        },
-        {
-          "name": "TRUSTED_PROXIES",
-          "label": "TRUSTED_PROXIES"
         },
         {
           "name": "LOG_CHANNEL",
@@ -120,11 +166,6 @@
           "name": "DB_USERNAME",
           "label": "DB_USERNAME",
           "default": "firefly"
-        },
-        {
-          "name": "DB_PASSWORD",
-          "label": "DB_PASSWORD",
-          "default": "secret_firefly_password"
         },
         {
           "name": "DB_SOCKET",
@@ -469,35 +510,6 @@
           "name": "FIREFLY_III_LAYOUT",
           "label": "FIREFLY_III_LAYOUT",
           "default": "v1"
-        },
-        {
-          "name": "APP_URL",
-          "label": "APP_URL",
-          "default": "https://firefly3.example.com"
-        },
-        {
-          "name": "TRAEFIK_ENABLE",
-          "label": "TRAEFIK_ENABLE",
-          "default": "true"
-        },
-        {
-          "name": "TRAEFIK_ROUTER_NAME",
-          "label": "TRAEFIK_ROUTER_NAME"
-        },
-        {
-          "name": "TRAEFIK_TLS",
-          "label": "TRAEFIK_TLS",
-          "default": "true"
-        },
-        {
-          "name": "TRAEFIK_CERT_RESOLVER",
-          "label": "TRAEFIK_CERT_RESOLVER",
-          "default": "default"
-        },
-        {
-          "name": "TRAEFIK_ROUTER_RULE",
-          "label": "TRAEFIK_ROUTER_RULE",
-          "default": "Host(`firefly3.example.com`)"
         }
       ],
       "platform": "linux",

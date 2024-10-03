@@ -101,6 +101,9 @@ services:
       USE_RUNNING_BALANCE: ${USE_RUNNING_BALANCE}
       FIREFLY_III_LAYOUT: ${FIREFLY_III_LAYOUT}
       APP_URL: ${APP_URL}
+    deploy:
+      mode: replicated
+      replicas: ${REPLICAS_COUNT_APP}
     labels:
       - traefik.enable=${TRAEFIK_ENABLE}
       - traefik.http.services.${TRAEFIK_ROUTER_NAME}.loadbalancer.server.port=8080
@@ -119,6 +122,9 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
+    deploy:
+      mode: replicated
+      replicas: ${REPLICAS_COUNT_DB}
 
 volumes:
   upload:

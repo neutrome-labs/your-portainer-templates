@@ -11,10 +11,10 @@ noprefix = False
 if sys.argv[1] == '--no-prefix':
     noprefix = True
 
+important = 0
 fragments = []
 for arg in sys.argv[2 if noprefix else 1:]:
     prefix = ''
-    edata = {}
     with open(arg, 'r') as f:
         prefix = f.name.split('/')[-1].split('.')
         prefix = prefix[0] + '_' if len(prefix) > 1 and not noprefix else ''
@@ -22,21 +22,27 @@ for arg in sys.argv[2 if noprefix else 1:]:
         for line in f:
             if line.startswith('#'):
                 continue
+            
             line = line.strip()
             if not line:
                 continue
-            key, value = line.split('=', 1)
+           
+            data, comment = line.split('#', 1) if '#' in line else (line, '')
+            key, value = line.split('=', 1) if '=' in line else (line, None)
             if value is None or value == '' or value == 'null':
                 value = None
-            edata[key] = value
-
-    for x in edata:
-        fragments.append({
-            "name": x,
-            "label": prefix.upper() + x,
-        })
-        if edata[x] is not None:
-            fragments[-1]["default"] = edata[x]
+            
+            m = {"name": key, "label": prefix.upper() + key}
+            if value is not None:
+                m["default"] = value.strip()
+            
+            if comment.strip() == '!important':
+                fragments.insert(important, m)
+                important += 1
+            else:
+                fragments.append(m)
+            
+        
 
 jdata = json.dumps(fragments, skipkeys=True, indent=2)
 print(jdata)
