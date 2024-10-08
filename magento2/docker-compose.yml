@@ -28,11 +28,11 @@ services:
     image: docker.io/wardenenv/nginx:1.16
     labels:
       traefik.enable: ${TRAEFIK_ENABLE}
-      traefik.http.routers.${TRAEFIK_ROUTER_NAME}-nginx.priority: "2"
-      traefik.http.routers.${TRAEFIK_ROUTER_NAME}-nginx.rule: ${TRAEFIK_ROUTER_RULE}
-      traefik.http.routers.${TRAEFIK_ROUTER_NAME}-nginx.tls: ${TRAEFIK_TLS}
-      traefik.http.routers.${TRAEFIK_ROUTER_NAME}-nginx.tls.certresolver: ${TRAEFIK_CERT_RESOLVER}
-      traefik.http.services.${TRAEFIK_ROUTER_NAME}-nginx.loadbalancer.server.port: "80"
+      traefik.http.routers.${TRAEFIK_ROUTER_NAME}.priority: "2"
+      traefik.http.routers.${TRAEFIK_ROUTER_NAME}.rule: ${TRAEFIK_ROUTER_RULE}
+      traefik.http.routers.${TRAEFIK_ROUTER_NAME}.tls: ${TRAEFIK_TLS}
+      traefik.http.routers.${TRAEFIK_ROUTER_NAME}.tls.certresolver: ${TRAEFIK_CERT_RESOLVER}
+      traefik.http.services.${TRAEFIK_ROUTER_NAME}.loadbalancer.server.port: "80"
     volumes:
       - type: bind
         source: ${HTML_SOURCE_DIR}
