@@ -1,0 +1,92 @@
+services:
+  db:
+    command:
+      - mysqld
+      - --max_allowed_packet=1024M
+      - --explicit_defaults_for_timestamp=on
+    environment:
+      MYSQL_DATABASE: magento
+      MYSQL_HISTFILE: /sql_history/.sql_history
+      MYSQL_PASSWORD: magento
+      MYSQL_ROOT_PASSWORD: magento
+      MYSQL_USER: magento
+    image: docker.io/wardenenv/mariadb:10.6
+    volumes:
+      - type: volume
+        source: dbdata
+        target: /var/lib/mysql
+        volume: {}
+  
+  nginx:
+    depends_on:
+      php-fpm:
+        condition: service_started
+        required: true
+    environment:
+      NGINX_PUBLIC: ${NGINX_PUBLIC}
+      NGINX_TEMPLATE: magento2.conf
+    image: docker.io/wardenenv/nginx:1.16
+    labels:
+      traefik.enable: ${TRAEFIK_ENABLE}
+      traefik.http.routers.${TRAEFIK_ROUTER_NAME}-nginx.priority: "2"
+      traefik.http.routers.${TRAEFIK_ROUTER_NAME}-nginx.rule: ${TRAEFIK_ROUTER_RULE}
+      traefik.http.routers.${TRAEFIK_ROUTER_NAME}-nginx.tls: ${TRAEFIK_TLS}
+      traefik.http.routers.${TRAEFIK_ROUTER_NAME}-nginx.tls.certresolver: ${TRAEFIK_CERT_RESOLVER}
+      traefik.http.services.${TRAEFIK_ROUTER_NAME}-nginx.loadbalancer.server.port: "80"
+    volumes:
+      - type: bind
+        source: ${HTML_SOURCE_DIR}
+        target: /var/www/html
+        bind:
+          create_host_path: true
+  
+  opensearch:
+    environment:
+      DISABLE_SECURITY_PLUGIN: "true"
+      OPENSEARCH_JAVA_OPTS: -Xms64m -Xmx512m
+      discovery.type: single-node
+    image: docker.io/wardenenv/opensearch:2.12
+    volumes:
+      - type: volume
+        source: osdata
+        target: /usr/share/opensearch/data
+        volume: {}
+  
+  php-fpm:
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+    environment:
+      CHOWN_DIR_LIST: '/bash_history /home/www-data/.ssh '
+      COMPOSER_MEMORY_LIMIT: "-1"
+      COMPOSER_VERSION: "2"
+      HISTFILE: /bash_history/.bash_history
+      MAGE_DEBUG_SHOW_ARGS: "1"
+      NODE_VERSION: "20"
+      TRAEFIK_DOMAIN: ${PUBLIC_URL}
+      TRAEFIK_SUBDOMAIN: ""
+    image: docker.io/wardenenv/php-fpm:${PHP_VERSION}-magento2
+    networks:
+      default: null
+    volumes:
+      - type: bind
+        source: /root/warden-envs/magento2-blank
+        target: /var/www/html
+        bind:
+          create_host_path: true
+  
+  redis:
+    image: docker.io/wardenenv/redis:7.2
+    networks:
+      default: null
+    volumes:
+      - type: volume
+        source: redis
+        target: /data
+        volume: {}
+
+volumes:
+  dbdata:
+  osdata:
+  redis:

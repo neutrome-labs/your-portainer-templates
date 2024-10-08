@@ -3,12 +3,74 @@
   "templates": [
     {
       "type": 3,
+      "title": "Magento 2",
+      "description": "Magento 2",
+      "repository": {
+        "url": "https://github.com/neutrome-labs/your-portainer-templates",
+        "stackfile": "magento2/docker-compose.yml"
+      },
+      "platform": "linux",
+      "categories": [
+        "Other"
+      ],
+      "env": [
+        {
+          "name": "TRAEFIK_ENABLE",
+          "label": "TRAEFIK_ENABLE",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_ROUTER_NAME",
+          "label": "TRAEFIK_ROUTER_NAME",
+          "default": ""
+        },
+        {
+          "name": "TRAEFIK_TLS",
+          "label": "TRAEFIK_TLS",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_CERT_RESOLVER",
+          "label": "TRAEFIK_CERT_RESOLVER",
+          "default": "default"
+        },
+        {
+          "name": "TRAEFIK_ROUTER_RULE",
+          "label": "TRAEFIK_ROUTER_RULE",
+          "default": "Host(`example.com`)"
+        },
+        {
+          "name": "HTML_SOURCE_DIR",
+          "label": "HTML_SOURCE_DIR"
+        },
+        {
+          "name": "NGINX_PUBLIC",
+          "label": "NGINX_PUBLIC",
+          "default": "/pub"
+        },
+        {
+          "name": "PHP_VERSION",
+          "label": "PHP_VERSION",
+          "default": "8.3"
+        },
+        {
+          "name": "PUBLIC_URL",
+          "label": "PUBLIC_URL"
+        }
+      ]
+    },
+    {
+      "type": 3,
       "title": "Firefly 3",
       "description": "Firefly 3",
       "repository": {
         "url": "https://github.com/neutrome-labs/your-portainer-templates",
         "stackfile": "firefly-3/docker-compose.yml"
       },
+      "platform": "linux",
+      "categories": [
+        "Other"
+      ],
       "env": [
         {
           "name": "REPLICAS_COUNT_APP",
@@ -511,10 +573,6 @@
           "label": "FIREFLY_III_LAYOUT",
           "default": "v1"
         }
-      ],
-      "platform": "linux",
-      "categories": [
-        "Other"
       ]
     }
   ]

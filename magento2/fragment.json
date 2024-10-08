@@ -1,0 +1,45 @@
+[
+  {
+    "name": "TRAEFIK_ENABLE",
+    "label": "TRAEFIK_ENABLE",
+    "default": "true"
+  },
+  {
+    "name": "TRAEFIK_ROUTER_NAME",
+    "label": "TRAEFIK_ROUTER_NAME",
+    "default": ""
+  },
+  {
+    "name": "TRAEFIK_TLS",
+    "label": "TRAEFIK_TLS",
+    "default": "true"
+  },
+  {
+    "name": "TRAEFIK_CERT_RESOLVER",
+    "label": "TRAEFIK_CERT_RESOLVER",
+    "default": "default"
+  },
+  {
+    "name": "TRAEFIK_ROUTER_RULE",
+    "label": "TRAEFIK_ROUTER_RULE",
+    "default": "Host(`example.com`)"
+  },
+  {
+    "name": "HTML_SOURCE_DIR",
+    "label": "HTML_SOURCE_DIR"
+  },
+  {
+    "name": "NGINX_PUBLIC",
+    "label": "NGINX_PUBLIC",
+    "default": "/pub"
+  },
+  {
+    "name": "PHP_VERSION",
+    "label": "PHP_VERSION",
+    "default": "8.3"
+  },
+  {
+    "name": "PUBLIC_URL",
+    "label": "PUBLIC_URL"
+  }
+]
